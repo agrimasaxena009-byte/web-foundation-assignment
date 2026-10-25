@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card Project</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 320px;
+            padding: 28px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 25px #00000015;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #6366f1;
+        }
+
+        h1 { color: #312e81; font-size: 25px; }
+        .role { color: #6366f1; font-weight: bold; }
+        p { line-height: 1.6; color: #475569; }
+
+        .skills span {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 7px 10px;
+            border-radius: 20px;
+            margin: 4px;
+            font-size: 13px;
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            border: 0;
+            padding: 11px 20px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <img class="avatar"
+             src="https://placehold.co/200x200?text=Student"
+             alt="Profile picture">
+
+        <h1>Your Name</h1>
+        <p class="role">Web Development Student</p>
+        <p>I am learning to create websites using HTML, CSS and JavaScript.</p>
+
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+        </div>
+
+        <p id="contact-info" hidden>Email: student@example.com</p>
+        <button onclick="toggleContact()">View Contact</button>
+    </main>
+
+    <script>
+        function toggleContact() {
+            const info = document.getElementById("contact-info");
+            info.hidden = !info.hidden;
+        }
+    </script>
+</body>
+</html>
+

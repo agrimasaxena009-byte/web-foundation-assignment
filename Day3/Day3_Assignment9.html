@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: 100vh;
+        }
+
+        aside {
+            background: #1e293b;
+            color: white;
+            padding: 25px 18px;
+        }
+
+        aside a {
+            display: block;
+            color: white;
+            padding: 12px 0;
+            text-decoration: none;
+        }
+
+        main { padding: 25px; }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #00000010;
+        }
+
+        .card h3 { color: #475569; }
+        .number { font-size: 28px; color: #2563eb; font-weight: bold; }
+
+        @media (max-width: 650px) {
+            .layout { grid-template-columns: 1fr; }
+            aside { padding: 12px 20px; }
+            aside a { display: inline-block; margin-right: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <h2>My Dashboard</h2>
+            <a href="#overview">Overview</a>
+            <a href="#courses">Courses</a>
+            <a href="#assignments">Assignments</a>
+            <a href="#settings">Settings</a>
+        </aside>
+
+        <main id="overview">
+            <h1>Student Dashboard</h1>
+            <p>Welcome back! Here is your learning summary.</p>
+
+            <section class="stats">
+                <article class="card">
+                    <h3>Courses</h3>
+                    <p class="number">4</p>
+                </article>
+                <article class="card">
+                    <h3>Assignments</h3>
+                    <p class="number">12</p>
+                </article>
+                <article class="card">
+                    <h3>Completed</h3>
+                    <p class="number">8</p>
+                </article>
+                <article class="card">
+                    <h3>Pending</h3>
+                    <p class="number">4</p>
+                </article>
+            </section>
+
+            <section class="card" id="courses" style="margin-top: 22px;">
+                <h2>Recent Activity</h2>
+                <p>HTML basics completed.</p>
+                <p>CSS layout practice in progress.</p>
+                <p>JavaScript fundamentals coming next.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+

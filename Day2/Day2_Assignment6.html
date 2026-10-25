@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Menu</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background: #172554;
+            color: white;
+            padding: 16px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 23px; font-weight: bold; }
+
+        .links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .links a:hover { color: #93c5fd; }
+
+        .menu-button {
+            display: none;
+            background: #2563eb;
+            color: white;
+            border: 0;
+            padding: 9px 13px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        main { padding: 50px 20px; text-align: center; }
+
+        @media (max-width: 600px) {
+            nav { flex-wrap: wrap; }
+
+            .menu-button { display: block; }
+
+            .links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding-top: 20px;
+            }
+
+            .links.open { display: flex; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MyWebsite</div>
+        <button class="menu-button"
+                aria-expanded="false"
+                aria-controls="navigation"
+                onclick="toggleMenu()">☰ Menu</button>
+
+        <div class="links" id="navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main id="home">
+        <h1>Responsive Navigation</h1>
+        <p>Resize the browser to see how the menu changes on mobile.</p>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("navigation");
+            const button = document.querySelector(".menu-button");
+            const isOpen = menu.classList.toggle("open");
+
+            button.setAttribute("aria-expanded", isOpen);
+        }
+    </script>
+</body>
+</html>
+

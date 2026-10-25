@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2ff;
+            margin: 0;
+            padding: 40px 15px;
+        }
+
+        .profile-card {
+            width: 300px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border: 2px solid #c7d2fe;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px #00000015;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #6366f1;
+        }
+
+        h2 {
+            color: #3730a3;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3730a3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-card">
+        <img
+            class="profile-image"
+            src="https://placehold.co/200x200?text=Profile"
+            alt="Profile picture"
+        >
+
+        <h2>Your Name</h2>
+        <p>Computer Science Student</p>
+        <p>I enjoy learning programming and creating websites.</p>
+
+        <button type="button" onclick="showMessage()">
+            Contact Me
+        </button>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("Thank you for visiting my profile!");
+        }
+    </script>
+</body>
+</html>
